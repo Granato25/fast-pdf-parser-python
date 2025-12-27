@@ -12,7 +12,14 @@ Most PDF tools are either:
 - **expensive** (per-page billing)
 - **unpredictable** for large documents
 
-This API charges **1 request = 1 PDF file**, regardless of page count.
+
+## Why not PyMuPDF / pdfplumber / tika?
+
+- **Maintenance**: Local libraries often break on malformed PDFs or require complex system dependencies (like Java/Tika).
+- **Speed**: Pure Python implementations can be slow for large batch processing.
+- **Complexity**: Extracting layout-perfect bounding boxes usually requires writing complex heuristics.
+
+This client delegates the heavy lifting to a hosted Rust engine (requires an API key).
 
 ## Features
 
